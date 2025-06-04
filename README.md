@@ -59,11 +59,11 @@ This section contains **Oracle-specific functions and syntax patterns** I’ve e
    )
    ```
 
-   5. `MOD(n, m)`  
+5. `MOD(n, m)`  
    Returns the remainder of `n` divided by `m`.  
    Preferred over `%` in Oracle, as `%` is not standard SQL and may cause errors.
 
-   6. `EXTRACT(part FROM date)`  
+6. `EXTRACT(part FROM date)`  
    Returns a numeric value for the specified part of a `DATE` or `TIMESTAMP`.  
    Common parts: `YEAR`, `MONTH`, `DAY`, `HOUR`, `MINUTE`, `SECOND`.
    Use EXTRACT() instead of YEAR(), MONTH(), etc., because those functions are not supported.
