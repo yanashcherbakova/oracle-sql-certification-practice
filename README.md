@@ -73,6 +73,16 @@ This section contains **Oracle-specific functions and syntax patterns** I’ve e
    EXTRACT(MONTH FROM hire_date)     -- returns 6
    ```
 
+7. Oracle SQL does **not allow aliasing subqueries using `AS`** in the `FROM` clause. 
 
+8. Oracle does not support `COUNT(DISTINCT col1, col2)`. 
+   Use a subquery with `SELECT COUNT(*) FROM (SELECT DISTINCT col1, col2 ...)` instead.
+
+   ```sql
+   SELECT COUNT(*) FROM (
+   SELECT DISTINCT col1, col2 FROM your_table
+   )  
+   ```
    
-This list will grow as I encounter more Oracle-specific features and patterns while practicing.
+
+**This list will grow as I encounter more Oracle-specific features and patterns while practicing...**
