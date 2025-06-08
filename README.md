@@ -83,6 +83,24 @@ This section contains **Oracle-specific functions and syntax patterns** I’ve e
    SELECT DISTINCT col1, col2 FROM your_table
    )  
    ```
+9. `LISTAGG(column, 'separator') WITHIN GROUP (ORDER BY column)`
+   Concatenates values from multiple rows into a single string, separated by a chosen delimiter.
+   Commonly used to aggregate strings grouped by a column.
+
+   ```sql
+   SELECT department_id,
+       LISTAGG(employee_name, ', ') WITHIN GROUP (ORDER BY employee_name) AS employee_list
+      FROM employees
+      GROUP BY department_id;
+   ```
    
+10. `TRUNC(date_column)`
+      Removes the time portion from a `DATE` or `TIMESTAMP`, leaving only the date (at midnight).
+      Useful when comparing dates regardless of time, especially in `BETWEEN` filters.
+
+   ```sql
+   TRUNC(program_date) BETWEEN DATE '2020-06-01' AND DATE '2020-06-30'
+   ```
+
 
 **This list will grow as I encounter more Oracle-specific features and patterns while practicing...**
